@@ -4,7 +4,7 @@ services:
   java_app:
     build:
       context: .
-    container_name: "ExpensesTracker app"
+    container_name: "ExpensesTracker_app"
     networks:
       - ExpensesTrackerapp
     environment:
