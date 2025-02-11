@@ -44,6 +44,18 @@ services:
       start_period: 30s
     volumes:
       - ./mysql-data:/var/lib/mysql
+
+
+  nginx:
+    build: ./nginx
+    container_name: "nginx"
+    networks:
+      - ExpensesTrackerapp
+    ports:
+      - "80:80"
+    depends_on:
+      - java_app
+    restart: always
 networks:
   ExpensesTrackerapp:
     driver: bridge
